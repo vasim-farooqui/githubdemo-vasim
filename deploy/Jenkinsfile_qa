@@ -4,7 +4,7 @@ pipeline {
 
   agent {
     node {
-      label 'DEPLOY-LEGACY-CM-EMAIL-SERVICE-ECS'
+      label 'DEPLOY_TEST_LAMBDA'
     }
 
   }
@@ -18,15 +18,7 @@ pipeline {
       steps {
         script{
           def depScript = load('deploy/deploy_script.groovy')
-          depScript.deployOnECS();
-        }
-      }
-    }
-    stage('Verify Deployment') {
-      steps {
-        script{
-          def depScript = load('deploy/deploy_script.groovy')
-          depScript.checkDeploymentStatus();
+          depScript.deployOnLAMBDA();
         }
       }
     }

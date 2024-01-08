@@ -22,22 +22,5 @@ pipeline {
         }
       }
     }
-
-
   }
-  post {
-      success {
-        sh (label:"Notifying Success Status to MS Teams", script: """
-          curl -X POST ${env.LRN_NOTIFICATION_WEB_HOOK_URL}  -H 'cache-control: no-cache'  -H 'content-type: application/json' \
-           -d '{\"summary\":\"${env.LRN_SERVICE_NAME} Deployment\",\"sections\":[{\"activityTitle\":\"<h1><b>${env.LRN_SERVICE_NAME} Deployment on ${env.LRN_DEPLOY_ENV}</b></h1>\",\"facts\":[{\"name\":\"Branch/TAG\",\"value\":\"${env.deploy_tag}\"},{\"name\":\"Commit\",\"value\":\"${env.GIT_COMMIT}\"}, {\"name\":\"Deployment Job Status\", \"value\":\"Passed ✔ [Job#${env.BUILD_NUMBER}](${env.BUILD_URL})\" } ,{\"name\":\"RFC\",\"value\":\"${env.jira_ticket}\"}],\"markdown\":true}], \"themeColor\": \"00FF00\"}'
-        """);
-      }
-      failure {
-        sh (label:"Notifying Failure Status to MS Teams", script: """
-          curl -X POST ${env.LRN_NOTIFICATION_WEB_HOOK_URL}  -H 'cache-control: no-cache'  -H 'content-type: application/json' \
-           -d '{\"summary\":\"${env.LRN_SERVICE_NAME} Deployment\",\"sections\":[{\"activityTitle\":\"<h1><b>${env.LRN_SERVICE_NAME} Deployment on ${env.LRN_DEPLOY_ENV}</b></h1>\",\"facts\":[{\"name\":\"Branch/TAG\",\"value\":\"${env.deploy_tag}\"},{\"name\":\"Commit\",\"value\":\"${env.GIT_COMMIT}\"}, {\"name\":\"Deployment Job Status\", \"value\":\"Failed ❌ [Job#${env.BUILD_NUMBER}](${env.BUILD_URL})\" } ,{\"name\":\"RFC\",\"value\":\"${env.jira_ticket}\"}],\"markdown\":true}], \"themeColor\": \"FF0000\"}'
-        """);
-      }
-  }
- 
 }

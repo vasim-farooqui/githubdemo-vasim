@@ -1,4 +1,4 @@
-def deployOnECS () {
+def deployOnLAMBDA () {
   
   //******** Following Variables need to come from jenkins ********
   //ECS_CLUSTER=qa-lrn-com

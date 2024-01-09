@@ -6,8 +6,8 @@ def deployOnLAMBDA () {
   //TASK_DEFINATION=legacy-cm-email-service
   //AWS_REGION=us-east-1
   // Testing Jenkins Jira integration
-  function-name = Jenkins-deployment-lamda
-  lambdafilepath = "/home/lrnqa/jenkins/workspace/Test-Lambda"
+  //function-name = Jenkins-deployment-lamda
+  //lambdafilepath = "/home/lrnqa/jenkins/workspace/Test-Lambda"
   sh ( label:"Deploying to Lambda", script: """
         set +x
   aws lambda update-function-code --function-name $function-name --zip-file fileb://$lambdafilepath

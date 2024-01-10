@@ -1,4 +1,3 @@
-[6:04 PM] Rakshith Ramesha
 pipeline {
 
     agent any

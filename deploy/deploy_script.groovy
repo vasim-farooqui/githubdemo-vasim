@@ -15,7 +15,7 @@ pipeline {
   
     stages {
 
-        stage('deploy on lambda) { 
+        stage('deploy on lambda') { 
             steps {
                 echo " deploy code on lambda "
             }

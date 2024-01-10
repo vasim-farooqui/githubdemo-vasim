@@ -1,24 +1,5 @@
 #!groovy
 
-pipeline {
-
-    agent {
-        node {
-            label 'DEPLOY_TEST_LAMBDA'
-        }
-    }
-  
-    stages {
-
-        stage('deploy on lambda') { 
-            steps {
-                echo " deploy code on lambda "
-            }
-        }         
-        
-    } // Stages close
-    
-} 
 def deployOnLAMBDA () {
     sh  """
         echo "Deploying to Lambda" 

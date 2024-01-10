@@ -9,14 +9,16 @@ pipeline {
           } 
 
     stages {
-        stage("Deploy") {
-            steps {
+        
+        stage("Deploy")  {
+            
+            steps  {
                 sh '''
                     aws lambda update-function-code --function-name $lamfunction_name --zip-file $lambdafilepath
 
                   '''
-            }
-        }
+                }
+             }
 
         stage("version") {
             steps {
@@ -24,9 +26,9 @@ pipeline {
                   sh '''
                    aws lambda publish-version --function-name $lamfunction_name
 
-                   '''
-                  
-            }
-        }
-    }
+                   '''                  
+                }
+           }
+       }
+    
 }

@@ -9,7 +9,7 @@ pipeline {
       steps {
         script {
           def depScript = load 'deploy/deploy_script.groovy'
-          depScript.deployOnLAMBDA()
+          depScript.deployOnLAMBDA();
         }
       }
     }

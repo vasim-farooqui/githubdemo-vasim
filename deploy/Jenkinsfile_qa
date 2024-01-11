@@ -1,17 +1,15 @@
-#!groovy
 pipeline {
   agent {
     node {
       label 'DEPLOY_TEST_LAMBDA'
     }
-
   }
   stages {
     stage('Deploy') {
       steps {
-        script{
-          def depScript = load('deploy/deploy_script.groovy')
-          depScript.deployOnLAMBDA();
+        script {
+          def depScript = load 'deploy/deploy_script.groovy'
+          depScript.deployOnLAMBDA()
         }
       }
     }

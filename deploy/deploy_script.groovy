@@ -9,7 +9,7 @@ pipeline {
     environment {
          
 		   lamfunction_name = 'Jenkins-deployment-lamda'
-           lambdafilepath = '/home/lrnqa/jenkins/workspace/Test-Lambda/lamdbacode.zip' // Path to your updated Lambda function code        
+                   lambdafilepath = '/home/lrnqa/jenkins/workspace/Test-Lambda/lamdbacode.zip' // Path to your updated Lambda function code        
         }
   
     stages {
@@ -19,21 +19,10 @@ pipeline {
                 echo " deploy code on lambda "
             }
         }
-
-        stage('version') { 
-            steps { 
-                echo " new version " 
-            }
-            
-        }
-	  
-          
-        
+                  
     } // Stages close
     
 } 
-
-
 
 def deployOnLAMBDA () {
     sh """

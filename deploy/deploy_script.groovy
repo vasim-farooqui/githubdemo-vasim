@@ -10,5 +10,8 @@ node('DEPLOY_TEST_LAMBDA'){
 }
 
 def deployOnLAMBDA () {
-    echo "test"
+    sh '''
+     aws lambda update-function-code --function-name $lamfunction_name --zip-file $lambdafilepath
+     
+     '''
 }

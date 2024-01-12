@@ -2,10 +2,10 @@
 
 def function
 {
-
+  
   agent { 
     node {
-      label 'DEPLOY_TEST_LAMBDA'
+      label 'DEPLOY_TEST_LAMBDA';
     }
   }
  

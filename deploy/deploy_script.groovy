@@ -1,6 +1,7 @@
 #!groovy
 
-pipeline {
+def function
+{
 
   agent { 
     node {

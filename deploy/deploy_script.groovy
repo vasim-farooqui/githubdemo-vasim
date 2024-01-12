@@ -1,12 +1,8 @@
 #!groovy
 def function_name 
-{
-   echo "function started stage2"
-    agent {
-        node {
-            label 'DEPLOY_TEST_LAMBDA'
-        }
-    }
+{  
+   agent any
+   echo "function started stage2" 
      
    stage('deploy on lambda') { 
             steps {

@@ -7,14 +7,8 @@ def function_name
             label 'DEPLOY_TEST_LAMBDA'
         }
     }
-     environment {
-
-           lamfunction_name = 'Jenkins-deployment-lamda'
-           lambdafilepath = '/home/lrnqa/jenkins/workspace/Test-Lambda/lamdbacode.zip' // Path to your updated Lambda function code
-
-          } 
-
-        stage('deploy on lambda') { 
+     
+   stage('deploy on lambda') { 
             steps {
                 echo " deploy code on lambda "
             }

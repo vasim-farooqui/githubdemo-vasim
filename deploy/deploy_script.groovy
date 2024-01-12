@@ -2,7 +2,6 @@ def deployOnLAMBDA () {
     echo "Deploying to Lambda"
 }
 
-pipeline {
     agent any
  
     stages {
@@ -15,4 +14,4 @@ pipeline {
             }
         }
     }
-}
+

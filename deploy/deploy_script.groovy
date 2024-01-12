@@ -1,11 +1,7 @@
 def deployOnLAMBDA () {
     echo "Deploying to Lambda"
 }
-agent { 
-    node {
-      label 'DEPLOY_TEST_LAMBDA'
-    }
-  }
+agent any
  environment {
         lamfunction_name = 'Jenkins-deployment-lamda'
         lambdafilepath = '/home/lrnqa/jenkins/workspace/Test-Lambda/lamdbacode.zip' // Path to your updated Lambda function code

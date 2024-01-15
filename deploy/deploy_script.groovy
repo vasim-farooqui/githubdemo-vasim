@@ -1,4 +1,5 @@
-pipeline {
+def deployOnLAMBDA 
+{
     agent any
     environment { 
         lamfunction_name = 'Jenkins-deployment-lamda'

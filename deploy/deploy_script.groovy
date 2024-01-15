@@ -1,6 +1,9 @@
-def deployOnLAMBDA 
-{
-    agent any
+def deployOnLAMBDA = { it -> println it }
+{ 
+  agent {
+        label 'DEPLOY_TEST_LAMBDA'    
+  
+    }
     environment { 
         lamfunction_name = 'Jenkins-deployment-lamda'
         lambdafilepath = '/home/lrnqa/jenkins/workspace/Test-Lambda/lamdbacode.zip'

@@ -10,12 +10,15 @@ def deployOnLAMBDA = { it -> println it }
         lambdafilepath = '/home/lrnqa/jenkins/workspace/Test-Lambda/lamdbacode.zip'
     }
     stages {
-        stage('Initialization') {
-            steps {
-                echo "step 1"
-            }
+    stage('Deploy') {
+      steps {
+        script{
+          def depScript = load('deploy/deploy_script.groovy')
+          depScript.deployOnLAMBDA();
         }
-   }
+      }
+    }
+  }
 }
 def deployOnLAMBDA () {
                         sh ( label:"Deploying to Lambda", script: """

@@ -1,3 +1,17 @@
+pipeline {
+    agent any
+    environment { 
+        lamfunction_name = 'Jenkins-deployment-lamda'
+        lambdafilepath = '/home/lrnqa/jenkins/workspace/Test-Lambda/lamdbacode.zip'
+    }
+    stages {
+        stage('Initialization') {
+            steps {
+                echo "step 1"
+            }
+        }
+   }
+}
 def deployOnLAMBDA () {
                         sh ( label:"Deploying to Lambda", script: """
                              set +x

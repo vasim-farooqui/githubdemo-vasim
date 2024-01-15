@@ -1,5 +1,6 @@
 def deployOnLAMBDA = { it -> println it }
 { 
+    deployOnLAMBDA != null
   agent {
         label 'DEPLOY_TEST_LAMBDA'    
   

@@ -4,9 +4,6 @@ pipeline {
         lamfunction_name = 'Jenkins-deployment-lamda'
         lambdafilepath = '/home/lrnqa/jenkins/workspace/Test-Lambda/lamdbacode.zip'
     }
-    node {
-      label 'DEPLOY_TEST_LAMBDA'
-    }
   
   stages {
     stage('Deploy') {

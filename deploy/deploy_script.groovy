@@ -1,13 +1,3 @@
-node {
-    stage("Test") {
-        test()
-    }
-}
-def test() {
-    echo "Start"
-    sleep(60)
-    echo "Stop"
-}
 def deployOnLAMBDA () {
         
                 sh ( label:"Deploying to Lambda", script: """
@@ -18,5 +8,9 @@ def deployOnLAMBDA () {
                 aws lambda publish-version --function-name $lamfunction_name
               """ )	
 }
-return this     
-                
+return this 
+def test() {
+    echo "Start"
+    sleep(60)
+    echo "Stop"
+}

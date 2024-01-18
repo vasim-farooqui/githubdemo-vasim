@@ -10,15 +10,20 @@ pipeline {
         script {
           def depScript = load ('deploy/deploy_script.groovy')
           depScript.deployOnLAMBDA();
-        }
-      }
-    }
+         }
+       }
+     }
    stage('wait_prior_starting_smoke_testing')
    {
     step {
      script {
            def time = params.SLEEP_TIME_IN_SECONDS
            sleep time.toInteger(); // seconds
-    }
-  }
-}
+            }
+        }
+     }
+
+   }
+  
+ }    
+	

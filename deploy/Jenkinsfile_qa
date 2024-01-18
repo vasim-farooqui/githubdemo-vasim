@@ -13,16 +13,6 @@ pipeline {
          }
        }
      }
-   stage('Pausing') {
-            steps {
-               script {
-               def test() {
-               echo "Start"
-               sleep(5)
-               echo "Stop"
-               }             
-            }
-        }
-   }
+   
  }    
 }	

@@ -11,6 +11,7 @@ def deployOnLAMBDA () {
 return this 
 def test() {
     echo "Start"
-    sleep(60)
+    sh 'sleep 5'
     echo "Stop"
 }
+return this 

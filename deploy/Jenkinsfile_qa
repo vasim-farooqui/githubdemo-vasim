@@ -12,11 +12,12 @@ pipeline {
           depScript.deployOnLAMBDA();
          }
        }
-       stage('Pausing') {
+       
+     } 
+    stage('Pausing') {
             steps {
                 sleep(time: 5, unit: 'MINUTES')
             }
         }
-     }   
    }     
 }	

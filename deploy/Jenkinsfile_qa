@@ -15,7 +15,7 @@ pipeline {
      }
    stage('wait_prior_starting_smoke_testing')
    {
-    step {
+    steps {
      script {
            def time = params.SLEEP_TIME_IN_SECONDS
            sleep time.toInteger(); // seconds

@@ -15,9 +15,14 @@ pipeline {
      }
    stage('Pausing') {
             steps {
-                sleep(time: 2, unit: 'MINUTES')
+               script {
+               def test() {
+               echo "Start"
+               sleep(5)
+               echo "Stop"
+               }             
             }
         }
    }
  }    
-	
+}	

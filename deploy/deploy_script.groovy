@@ -3,7 +3,6 @@ node {
         test()
     }
 }
-
 @NonCPS
 def test() {
     echo "Start"

@@ -2,7 +2,7 @@ def deployOnLAMBDA () {
         
                 sh ( label:"Deploying to Lambda", script: """
                 set +x
-                echo "Waiting For Version Update"
+                echo "Updateing code on Lambda function"
                 aws lambda update-function-code --function-name $lamfunction_name --zip-file fileb://$lambdafilepath
               """ )	
 }

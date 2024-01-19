@@ -4,14 +4,8 @@ def deployOnLAMBDA () {
                 set +x
                 aws lambda update-function-code --function-name $lamfunction_name --zip-file fileb://$lambdafilepath
                 echo "Waiting For Version Update"
-                test()
                 aws lambda publish-version --function-name $lamfunction_name
               """ )	
 }
 return this 
-def test() {
-    echo "Start"
-    sh 'sleep 5'
-    echo "Stop"
-}
-return this 
+
